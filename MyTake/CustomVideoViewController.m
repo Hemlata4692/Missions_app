@@ -436,11 +436,15 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     if (error) {
         if ([error code] == AVErrorDiskFull) {
             sizeExceed = 1;
-        } else if ([error code] == AVErrorMaximumFileSizeReached) {
+        }
+        else if ([error code] == AVErrorMaximumFileSizeReached) {
             sizeExceed = YES;
             sizeExceed = 2;
-        } else if ([error code] == AVErrorMaximumDurationReached) {
-        } else {
+        }
+        else if ([error code] == AVErrorMaximumDurationReached) {
+            NSLog(@"Caught max duration error");
+        }
+        else {
             NSLog(@"Caught other error");
         }
     }

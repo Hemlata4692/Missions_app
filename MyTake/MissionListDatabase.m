@@ -20,11 +20,11 @@
     [database open];
     //insert data in mission table
     if (0==[self checkRecordExists:missionListData.missionId]) {
-          [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission(user_id,mission_id,mission_status,mission_image,mission_title,mission_startdate,mission_enddate,timestamp,status) values('%@','%@','%@','%@','%@','%@','%@','%@','%@')",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionListData.missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status]];
+          [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission(user_id,mission_id,mission_status,mission_image,mission_title,mission_startdate,mission_enddate,timestamp,status,sort_date) values('%@','%@','%@','%@','%@','%@','%@','%@','%@', '%@')",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionListData.missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,missionListData.sortDate]];
     }
     //update mission table data if time stamp is changed
     else {
-        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET user_id = '%@',mission_id = '%@',mission_status = '%@',mission_image = '%@',mission_title = '%@',mission_startdate = '%@',mission_enddate = '%@',timestamp = '%@',status ='%@' where user_id = '%@' AND timestamp != '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionListData.missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,[UserDefaultManager getValue:@"userId"],missionListData.timeStamp,missionListData.missionId]];
+        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET user_id = '%@',mission_id = '%@',mission_status = '%@',mission_image = '%@',mission_title = '%@',mission_startdate = '%@',mission_enddate = '%@',timestamp = '%@',status ='%@',sort_date ='%@' where user_id = '%@' AND timestamp != '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionListData.missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,missionListData.sortDate,[UserDefaultManager getValue:@"userId"],missionListData.timeStamp,missionListData.missionId]];
     }
     [database close];
 }
@@ -33,7 +33,7 @@
     FMDatabase *database = [FMDatabase databaseWithPath:[myDelegate getDBPath]];
     [database open];
     //update mission table if mission status is changed
-    [database executeUpdate:[NSString stringWithFormat:@"Update mission SET user_id = '%@',mission_id = '%@',mission_status = '%@',mission_image = '%@',mission_title = '%@',mission_startdate = '%@',mission_enddate = '%@',timestamp = '%@',status ='%@' where user_id = '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,[UserDefaultManager getValue:@"userId"],missionListData.missionId]];
+    [database executeUpdate:[NSString stringWithFormat:@"Update mission SET user_id = '%@',mission_id = '%@',mission_status = '%@',mission_image = '%@',mission_title = '%@',mission_startdate = '%@',mission_enddate = '%@',timestamp = '%@',status ='%@',sort_date ='%@' where user_id = '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,missionListData.sortDate,[UserDefaultManager getValue:@"userId"],missionListData.missionId]];
       [database close];
 }
 #pragma mark - end
@@ -50,6 +50,19 @@
 
 #pragma mark - end
 
+#pragma mark - Delete data from database
++ (void)deleteDataFromMissionList:(MissionDataModel *)missionList
+{
+    FMDatabase *database = [FMDatabase databaseWithPath:[myDelegate getDBPath]];
+    [database open];
+    //delete mission
+    [database executeUpdate:[NSString stringWithFormat:@"DELETE FROM mission where user_id = '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionList.missionId]];
+    [database close];
+}
+
+#pragma mark - end
+
+
 #pragma mark - Fetch data from database
 + (NSMutableArray *) getMisionsList
 {
@@ -57,7 +70,7 @@
     FMDatabase *db = [FMDatabase databaseWithPath:[myDelegate getDBPath]];
     [db open];
     //fetch mission list
-    FMResultSet *results = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM mission where user_id = '%@'",[UserDefaultManager getValue:@"userId"]]];
+    FMResultSet *results = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM mission where user_id = '%@' order  by datetime(sort_date) DESC",[UserDefaultManager getValue:@"userId"]]];
     while([results next])
     {
         MissionDataModel *missionList = [[MissionDataModel alloc] init];
@@ -69,6 +82,7 @@
         missionList.missionEndDate = [results stringForColumn:@"mission_enddate"];
         missionList.timeStamp = [results stringForColumn:@"timestamp"];
         missionList.status = [results stringForColumn:@"status"];
+        missionList.sortDate = [results stringForColumn:@"sort_date"];
         [missionArray addObject:missionList];
     }
     [db close];
@@ -93,6 +107,8 @@
         missionList.missionStartDate = [results stringForColumn:@"mission_startdate"];
         missionList.missionEndDate = [results stringForColumn:@"mission_enddate"];
         missionList.timeStamp = [results stringForColumn:@"timestamp"];
+        missionList.status = [results stringForColumn:@"status"];
+        missionList.sortDate = [results stringForColumn:@"sort_date"];
         [missionArray addObject:missionList];
     }
     [db close];

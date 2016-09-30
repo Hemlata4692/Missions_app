@@ -66,8 +66,9 @@ id<GAITracker> tracker;
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     //google maps api key
-    [GMSServices provideAPIKey:@"AIzaSyAKJeU-WNd-y5ESDiEk03vf1dUMvLlO9mQ"];//MyTakePlacesAPI
-    [GMSPlacesClient provideAPIKey:@"AIzaSyC7kPQH5tBDQu940-h8Mp0ySmjF4Pp6-Ig"];//AIzaSyAKJeU-WNd-y5ESDiEk03vf1dUMvLlO9mQ this can also be used as in this key both API are enable
+    //client's key=AIzaSyCjilQk_CUJl3k_eXrthSmmoIMxwyOuHSY
+    [GMSServices provideAPIKey:@"AIzaSyCjilQk_CUJl3k_eXrthSmmoIMxwyOuHSY"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyCjilQk_CUJl3k_eXrthSmmoIMxwyOuHSY"];
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:58.0/255.0 blue:78.0/255.0 alpha:1.0]];
@@ -134,26 +135,22 @@ id<GAITracker> tracker;
 
 #pragma mark - Check database existance and get path
 //get database path
-- (NSString *)getDBPath
-{
+- (NSString *)getDBPath {
     NSArray *arrPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
     NSString *documentsDir = [arrPaths objectAtIndex:0];
     NSString *str = [documentsDir stringByAppendingPathComponent:@"MyTake.sqlite"];
-    return str;
+   return str;
 }
 
 //check if database exists or not
-- (void)checkDataBaseExistence
-{
+- (void)checkDataBaseExistence {
     NSFileManager *fileManager=[NSFileManager defaultManager];
     NSError *error;
     BOOL success=[fileManager fileExistsAtPath:[self getDBPath]];
-    if(!success)
-    {
+    if(!success) {
         NSString *defaultDBPath=[[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:databaseName];
         success=[fileManager copyItemAtPath:defaultDBPath  toPath:[self getDBPath] error:&error];
-        if(!success)
-        {
+        if(!success) {
             NSAssert1(0,@"failed to create database with message '%@'.",[error localizedDescription]);
         }
     }

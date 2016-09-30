@@ -95,6 +95,7 @@
             tempModel.missionEndDate=[response objectAtIndex:i][@"EndDate"];
             tempModel.timeStamp=[response objectAtIndex:i][@"TimeStamp"];
             tempModel.status=[response objectAtIndex:i][@"Status "];
+            tempModel.sortDate=[response objectAtIndex:i][@"SortDate"];
             [dataArray addObject:tempModel];
         }
         success(dataArray);
@@ -137,8 +138,6 @@
                 questionList.answerOptions =[questionDict[@"AnswerOptions"] mutableCopy];
                 questionList.answerAttachments =[questionDict[@"Attachments "] mutableCopy];
             } @catch (NSException *exception) {
-                
-                NSLog(@"exception is %@",exception);
             }
             [missionData.questionsArray addObject:questionList];
         }

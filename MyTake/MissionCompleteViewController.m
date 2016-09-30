@@ -114,7 +114,6 @@
 - (void)submitMissionLater {
     UploadMissionModel *submitLater = [UploadMissionModel new];
     [submitLater submitMissionLater:^(id response) {
-        
         // change mission status to pending when user submit later
         NSMutableArray *dataArray=[NSMutableArray new];
         dataArray = [MissionListDatabase getMisionsListFromMisionId];

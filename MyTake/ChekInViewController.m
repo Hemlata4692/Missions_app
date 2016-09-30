@@ -175,6 +175,7 @@
                   if (placemark) {
                       //String to hold address
                       NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+                      //Print the location to console
                       placeName=locatedAt;
                       //set pin om map
                       [self setGoogleMapData:placeName];
@@ -244,8 +245,8 @@
     CLLocationCoordinate2D southWest;
     if (currentLocation.latitude!=0 && currentLocation.longitude!=0){
         center = CLLocationCoordinate2DMake(currentLocation.latitude, currentLocation.longitude);
-        northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001);
-        southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001);
+        northEast = CLLocationCoordinate2DMake(center.latitude + 0.010, center.longitude + 0.010);
+        southWest = CLLocationCoordinate2DMake(center.latitude - 0.010, center.longitude - 0.010);
     }
     else {
         center = CLLocationCoordinate2DMake(37.0902, -95.7129);

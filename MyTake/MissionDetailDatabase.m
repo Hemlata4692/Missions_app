@@ -36,8 +36,6 @@
             attachments = [[NSString alloc] initWithData:attachmentJsonData encoding:NSUTF8StringEncoding];
             
         } @catch (NSException *exception) {
-            
-            NSLog(@"exception is %@",exception);
         }
         @try {
             NSData *answerOptionsData = [NSJSONSerialization dataWithJSONObject:questionDetail.answerOptions
@@ -46,8 +44,6 @@
             answerOptions = [[NSString alloc] initWithData:answerOptionsData encoding:NSUTF8StringEncoding];
             
         } @catch (NSException *exception) {
-            
-            NSLog(@"exception is %@",exception);
         }
         @try {
             
@@ -57,8 +53,6 @@
             scaleLabels = [[NSString alloc] initWithData:scaleLabelsData encoding:NSUTF8StringEncoding];
             
         } @catch (NSException *exception) {
-            
-            NSLog(@"exception is %@",exception);
         }
         //insert mission details data in database
         [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
@@ -82,8 +76,6 @@
                 attachments = [[NSString alloc] initWithData:attachmentJsonData encoding:NSUTF8StringEncoding];
                 
             } @catch (NSException *exception) {
-                
-                NSLog(@"exception is %@",exception);
             }
             @try {
                 NSData *answerOptionsData = [NSJSONSerialization dataWithJSONObject:questionDetail.answerOptions
@@ -92,8 +84,6 @@
                 answerOptions = [[NSString alloc] initWithData:answerOptionsData encoding:NSUTF8StringEncoding];
                 
             } @catch (NSException *exception) {
-                
-                NSLog(@"exception is %@",exception);
             }
             @try {
                 
@@ -103,8 +93,6 @@
                 scaleLabels = [[NSString alloc] initWithData:scaleLabelsData encoding:NSUTF8StringEncoding];
                 
             } @catch (NSException *exception) {
-                
-                NSLog(@"exception is %@",exception);
             }
             //update time stamp of mission in mission detail table if changed
             [database executeUpdate:[NSString stringWithFormat:@"Update mission_question SET timestamp='%@' where user_id = '%@' AND mission_id = '%@'",missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"],missionDetailData.missionId]];
@@ -157,23 +145,18 @@
             questionDetail.answerAttachments = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             
         } @catch (NSException *exception) {
-            
-            NSLog(@"exception is %@",exception);
         }
         @try {
             NSData * data = [[results stringForColumn:@"answer_options"] dataUsingEncoding:NSUTF8StringEncoding];
             questionDetail.answerOptions = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             
         } @catch (NSException *exception) {
-            
-            NSLog(@"exception is %@",exception);
         }
         @try {
             NSData * data = [[results stringForColumn:@"scale_labels"] dataUsingEncoding:NSUTF8StringEncoding];
             questionDetail.scaleLables = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             
         } @catch (NSException *exception) {
-            
         }
         [questionDetailsArray addObject:questionDetail];
     }

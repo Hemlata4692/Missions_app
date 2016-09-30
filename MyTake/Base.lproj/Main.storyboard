@@ -1722,8 +1722,15 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="230" height="135"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6U-td-WGL">
+                                                            <rect key="frame" x="1" y="104" width="227" height="30"/>
+                                                            <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.22" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="aK1-hj-ZeY"/>
+                                                            </constraints>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microvawe Oven" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-wB-gp8">
-                                                            <rect key="frame" x="11" y="106" width="217" height="21"/>
+                                                            <rect key="frame" x="11" y="109" width="217" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="0zD-ob-WdS"/>
                                                             </constraints>
@@ -1768,14 +1775,17 @@
                                                     <constraints>
                                                         <constraint firstItem="2FL-wB-gp8" firstAttribute="leading" secondItem="HRY-z1-NxP" secondAttribute="leading" constant="11" id="0ed-4L-gKd"/>
                                                         <constraint firstAttribute="trailing" secondItem="za4-H6-dhX" secondAttribute="trailing" id="5XE-Ny-N92"/>
+                                                        <constraint firstItem="h6U-td-WGL" firstAttribute="leading" secondItem="HRY-z1-NxP" secondAttribute="leading" constant="1" id="IoB-eP-36g"/>
                                                         <constraint firstAttribute="trailing" secondItem="mwt-f5-MtS" secondAttribute="trailing" constant="3" id="PQh-Jr-CdV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="h6U-td-WGL" secondAttribute="bottom" constant="1" id="RQs-rN-joY"/>
                                                         <constraint firstAttribute="trailing" secondItem="2FL-wB-gp8" secondAttribute="trailing" constant="2" id="T7A-pq-3nl"/>
                                                         <constraint firstAttribute="bottom" secondItem="za4-H6-dhX" secondAttribute="bottom" id="W0L-Kp-pzi"/>
                                                         <constraint firstItem="za4-H6-dhX" firstAttribute="top" secondItem="HRY-z1-NxP" secondAttribute="top" id="adw-Bv-ZUj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="h6U-td-WGL" secondAttribute="trailing" constant="2" id="bcy-dp-efH"/>
                                                         <constraint firstItem="mwt-f5-MtS" firstAttribute="top" secondItem="HRY-z1-NxP" secondAttribute="top" constant="9" id="jE0-HE-klW"/>
                                                         <constraint firstAttribute="width" secondItem="HRY-z1-NxP" secondAttribute="height" multiplier="47:27" constant="-5" id="lXF-dU-rfq"/>
                                                         <constraint firstItem="za4-H6-dhX" firstAttribute="leading" secondItem="HRY-z1-NxP" secondAttribute="leading" id="mTB-zO-Ig1"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2FL-wB-gp8" secondAttribute="bottom" constant="8" id="xUz-FT-PBo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2FL-wB-gp8" secondAttribute="bottom" constant="5" id="xUz-FT-PBo"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

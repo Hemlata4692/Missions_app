@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString *timeStamp;
 @property (strong, nonatomic) NSString *missionTitle;
 @property (strong, nonatomic) NSString *status;
+@property (strong, nonatomic) NSString *sortDate;
 
 + (instancetype)sharedUser;
 //get all missions

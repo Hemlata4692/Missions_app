@@ -32,8 +32,6 @@ static NSString *kDeviceToken=@"/api/mobile/saveDeviceToken";
         parameters = @{@"api_token" : deviceToken.apiKey,
                                      @"dt" : [UserDefaultManager getValue:@"deviceToken"]};
     } @catch (NSException *exception) {
-        
-        NSLog(@"exception is %@",exception);
     }
     super.baseUrl=deviceToken.baseUrl;
     [super post:kDeviceToken parameters:parameters onSuccess:success onFailure:failure];
@@ -45,7 +43,6 @@ static NSString *kDeviceToken=@"/api/mobile/saveDeviceToken";
 {
     NSDictionary *parameters = @{@"username" : userLogin.userName,
                                  @"password" : userLogin.password};
-    
     super.baseUrl=userLogin.baseUrl;
     [super post:kUserLogin parameters:parameters onSuccess:success onFailure:failure];
 }

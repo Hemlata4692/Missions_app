@@ -16,4 +16,5 @@
 + (void)updateDataInMissionTableAfterMissionStarted:(MissionDataModel *)missionList;
 + (NSMutableArray *)getMisionsList;
 + (NSMutableArray *) getMisionsListFromMisionId;
++ (void)deleteDataFromMissionList:(MissionDataModel *)missionList;
 @end

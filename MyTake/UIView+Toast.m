@@ -219,7 +219,6 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     } else if ([point isKindOfClass:[NSValue class]]) {
         return [point CGPointValue];
     }
-    
     return [self centerPointForPosition:CSToastDefaultPosition withToast:toast];
 }
 

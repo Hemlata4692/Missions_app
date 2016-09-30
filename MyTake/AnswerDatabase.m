@@ -28,8 +28,6 @@
         multiAnswer = [[NSString alloc] initWithData:multiAnswerData encoding:NSUTF8StringEncoding];
         
     } @catch (NSException *exception) {
-        
-        NSLog(@"exception is %@",exception);
     }
     //insert answer in answer table
     answerData.isAnswerUploaded=@"No";
@@ -114,8 +112,6 @@
         multiAnswer = [[NSString alloc] initWithData:multiAnswerData encoding:NSUTF8StringEncoding];
         
     } @catch (NSException *exception) {
-        
-        NSLog(@"exception is %@",exception);
     }
     answerData.isAnswerUploaded=@"Yes";
     //update answer status in answer table
@@ -154,8 +150,6 @@
             answerData.multiAnswerDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             
         } @catch (NSException *exception) {
-            
-            NSLog(@"exception is %@",exception);
         }
         [answerArray addObject:answerData];
     }

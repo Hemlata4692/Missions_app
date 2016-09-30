@@ -71,6 +71,8 @@
     else if (indexPath.row==2) {
         NSURL *url = [NSURL URLWithString:[UserDefaultManager getValue:@"communityLink"]];
         if (![[UIApplication sharedApplication] openURL:url]) {
+            SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+            [alert showWarning:self title:@"Alert" subTitle:[NSString stringWithFormat:@"%@%@",@"Failed to open url:",[url description]] closeButtonTitle:@"Done" duration:0.0f];
         }
     }
     else if (indexPath.row==3) {

@@ -83,42 +83,11 @@
     //set mission image
     [self downloadImages:missionImageView imageUrl:missionListData.missionImage placeholderImage:@"placeholder.png"];
     //set time stamp
-    NSTimeInterval timeInterval=[missionListData.timeStamp doubleValue];
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    missionTimeLabel.text=[self timeAgoFor:date];
-}
-
-//calculate time from time stamp
-- (NSString *) timeAgoFor : (NSDate *) date {
-    double timeLeft = [date timeIntervalSinceDate:[NSDate date]];
-    timeLeft = timeLeft * -1;
-    
-    if (timeLeft < 86400) {
-        int diffInTime = round(timeLeft / 60 / 60);
-        if (diffInTime==1) {
-            return[NSString stringWithFormat:@"%d hour ago", diffInTime];
-        }
-        else {
-            return[NSString stringWithFormat:@"%d hours ago", diffInTime];
-        }
-    }
-    else if (timeLeft < 86400 * 7) {
-        int diffInTime = round(timeLeft / 60 / 60 / 24);
-        if (diffInTime==1) {
-            return[NSString stringWithFormat:@"%d day ago", diffInTime];
-        }
-        else {
-            return[NSString stringWithFormat:@"%d days ago", diffInTime];
-        }
+    if ([missionListData.status isEqualToString:@"Expired"]) {
+        missionTimeLabel.text=@"Expired";
     }
     else {
-        int diffInTime = round(timeLeft / (86400 * 7));
-        if (diffInTime==1) {
-            return[NSString stringWithFormat:@"%d week ago", diffInTime];
-        }
-        else {
-            return[NSString stringWithFormat:@"%d weeks ago", diffInTime];
-        }
+    missionTimeLabel.text=missionListData.missionStartDate;
     }
 }
 

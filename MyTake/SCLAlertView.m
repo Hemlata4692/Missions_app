@@ -746,25 +746,20 @@ SCLTimerDisplay *buttonTimer;
 {
     // Cancel Countdown timer
     [buttonTimer cancelTimer];
-    
     // If the button has a validation block, and the validation block returns NO, validation
     // failed, so we should bail.
     if (btn.validationBlock && !btn.validationBlock()) {
         return;
     }
-    
-    if (btn.actionType == SCLBlock)
-    {
+    if (btn.actionType == SCLBlock) {
         if (btn.actionBlock)
             btn.actionBlock();
     }
-    else if (btn.actionType == SCLSelector)
-    {
+    else if (btn.actionType == SCLSelector) {
         UIControl *ctrl = [[UIControl alloc] init];
         [ctrl sendAction:btn.selector to:btn.target forEvent:nil];
     }
-    else
-    {
+    else {
         NSLog(@"Unknown action type for button");
     }
     
