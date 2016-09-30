@@ -68,7 +68,7 @@
 #pragma mark - end
 
 #pragma mark - Webservice
-//Get mission list data from webservice
+//Get mission liost data from webservice
 - (void)getAllMissions {
     MissionDataModel *missionModel = [MissionDataModel new];
     [missionModel getMissionListOnSuccess:^(id dataArray) {
