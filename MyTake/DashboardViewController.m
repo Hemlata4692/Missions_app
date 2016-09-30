@@ -68,7 +68,7 @@
 #pragma mark - end
 
 #pragma mark - Webservice
-//Get mission liost data from webservice
+//Get mission list data from webservice
 - (void)getAllMissions {
     MissionDataModel *missionModel = [MissionDataModel new];
     [missionModel getMissionListOnSuccess:^(id dataArray) {
@@ -94,10 +94,6 @@
         }
         [self.missionTableView reloadData];
     }];
-    
-}
-
-- (void)sortMissionAccordingToDate {
     
 }
 #pragma mark - end
