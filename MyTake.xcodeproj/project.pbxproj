@@ -86,7 +86,6 @@
 		B78F85261D5DA7FB008D23E5 /* RatingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B78F85251D5DA7FB008D23E5 /* RatingViewCell.m */; };
 		B79250851D6B078200754975 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79250841D6B078200754975 /* MapKit.framework */; };
 		B79574741D58663D008DE98E /* InstructionPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79574731D58663D008DE98E /* InstructionPopUpViewController.m */; };
-		B796078B1D62C79F00D60878 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B796078A1D62C79F00D60878 /* libGoogleAnalyticsServices.a */; };
 		B796078D1D62C7BC00D60878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B796078C1D62C7BC00D60878 /* SystemConfiguration.framework */; };
 		B796078F1D62C89400D60878 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B796078E1D62C89400D60878 /* CoreData.framework */; };
 		B79607911D633DCA00D60878 /* video_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B79607901D633DCA00D60878 /* video_placeholder.png */; };
@@ -109,12 +108,12 @@
 		B7E0DCE21D50865300764DBD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E0DCE11D50865300764DBD /* libz.tbd */; };
 		B7F2E7471D4A097F00ECEC9C /* user_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F2E7461D4A097F00ECEC9C /* user_thumbnail.png */; };
 		B7F4BB961D5C38BF00B63F13 /* SingleChoiceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4BB951D5C38BF00B63F13 /* SingleChoiceViewCell.m */; };
-		C782EF4FC20F1A18795430E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040AC358C472FB234612B61F /* libPods.a */; };
+		DB90C6271DA3E5B50039B2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B796078A1D62C79F00D60878 /* libGoogleAnalyticsServices.a */; };
+		DC7C254B8D591FA0476DFBAC /* libPods-MyTake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 883F21998AF9FF69F9364060 /* libPods-MyTake.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040AC358C472FB234612B61F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7198E8C488F15192E5381FD9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		883F21998AF9FF69F9364060 /* libPods-MyTake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70415041D4F0BCD00CD03C4 /* DashboardViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewCell.h; sourceTree = "<group>"; };
 		B70415051D4F0BCD00CD03C4 /* DashboardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewCell.m; sourceTree = "<group>"; };
 		B704150C1D4F80EB00CD03C4 /* MissionDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionDetailModel.h; sourceTree = "<group>"; };
@@ -309,7 +308,9 @@
 		B7F2E7461D4A097F00ECEC9C /* user_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_thumbnail.png; sourceTree = "<group>"; };
 		B7F4BB941D5C38BF00B63F13 /* SingleChoiceViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceViewCell.h; sourceTree = "<group>"; };
 		B7F4BB951D5C38BF00B63F13 /* SingleChoiceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceViewCell.m; sourceTree = "<group>"; };
-		E7928A0EDED05B91D18EF56C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C9938C770CD1BBE62825FD57 /* Pods-MyTake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTake/Pods-MyTake.debug.xcconfig"; sourceTree = "<group>"; };
+		D3EA9D3A64124715D3A2F5AC /* Pods-MyTake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTake.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTake/Pods-MyTake.release.xcconfig"; sourceTree = "<group>"; };
+		DBBF2FFE1DC13F6E00D2108F /* MyTake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTake.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,16 +324,25 @@
 				B75DBDBD1D6C028E00FF472A /* AssetsLibrary.framework in Frameworks */,
 				B796078F1D62C89400D60878 /* CoreData.framework in Frameworks */,
 				B796078D1D62C7BC00D60878 /* SystemConfiguration.framework in Frameworks */,
+				DB90C6271DA3E5B50039B2EE /* libGoogleAnalyticsServices.a in Frameworks */,
 				B7E0DCE21D50865300764DBD /* libz.tbd in Frameworks */,
 				B7E0DCE01D50862100764DBD /* libsqlite3.tbd in Frameworks */,
-				C782EF4FC20F1A18795430E6 /* libPods.a in Frameworks */,
-				B796078B1D62C79F00D60878 /* libGoogleAnalyticsServices.a in Frameworks */,
+				DC7C254B8D591FA0476DFBAC /* libPods-MyTake.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F49D701C4833FEE60094340 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9938C770CD1BBE62825FD57 /* Pods-MyTake.debug.xcconfig */,
+				D3EA9D3A64124715D3A2F5AC /* Pods-MyTake.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA4858590D1BB715EFD3768E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +355,7 @@
 				B796078A1D62C79F00D60878 /* libGoogleAnalyticsServices.a */,
 				B7E0DCE11D50865300764DBD /* libz.tbd */,
 				B7E0DCDF1D50862100764DBD /* libsqlite3.tbd */,
-				040AC358C472FB234612B61F /* libPods.a */,
+				883F21998AF9FF69F9364060 /* libPods-MyTake.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -428,8 +438,8 @@
 			children = (
 				B72831F21D34B99300E5E460 /* MyTake */,
 				B72831F11D34B99300E5E460 /* Products */,
-				C6B7B8B91804F22B1F036949 /* Pods */,
 				AA4858590D1BB715EFD3768E /* Frameworks */,
+				9F49D701C4833FEE60094340 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -444,6 +454,7 @@
 		B72831F21D34B99300E5E460 /* MyTake */ = {
 			isa = PBXGroup;
 			children = (
+				DBBF2FFE1DC13F6E00D2108F /* MyTake.entitlements */,
 				B728320D1D34BA3A00E5E460 /* AppDelegate */,
 				B728320F1D34BA6000E5E460 /* Models */,
 				B728324F1D34BC2F00E5E460 /* ServerCommunication */,
@@ -1239,15 +1250,6 @@
 			name = UIPlaceHolderTextView;
 			sourceTree = "<group>";
 		};
-		C6B7B8B91804F22B1F036949 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7198E8C488F15192E5381FD9 /* Pods.debug.xcconfig */,
-				E7928A0EDED05B91D18EF56C /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1255,12 +1257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B72832071D34B99300E5E460 /* Build configuration list for PBXNativeTarget "MyTake" */;
 			buildPhases = (
-				004FC8FCC7E0C0EF06B8D5A0 /* Check Pods Manifest.lock */,
+				78336E55B7D90F9A133A281D /* [CP] Check Pods Manifest.lock */,
 				B72831EC1D34B99300E5E460 /* Sources */,
 				B72831ED1D34B99300E5E460 /* Frameworks */,
 				B72831EE1D34B99300E5E460 /* Resources */,
-				54731D83AF6FF2FC22AF845D /* Embed Pods Frameworks */,
-				6DB62985F9F0E3D9F27281B9 /* Copy Pods Resources */,
+				F6F3C8D15C205BDDB429D75B /* [CP] Embed Pods Frameworks */,
+				F15F073B161A3F652481B0AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1277,12 +1279,18 @@
 		B72831E81D34B99300E5E460 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Ranosys;
 				TargetAttributes = {
 					B72831EF1D34B99300E5E460 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = T7GN63HCDX;
+						DevelopmentTeam = WCP559CSE6;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1330,14 +1338,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		004FC8FCC7E0C0EF06B8D5A0 /* Check Pods Manifest.lock */ = {
+		78336E55B7D90F9A133A281D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1345,34 +1353,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		54731D83AF6FF2FC22AF845D /* Embed Pods Frameworks */ = {
+		F15F073B161A3F652481B0AC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTake/Pods-MyTake-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6DB62985F9F0E3D9F27281B9 /* Copy Pods Resources */ = {
+		F6F3C8D15C205BDDB429D75B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTake/Pods-MyTake-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1491,14 +1499,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WCP559CSE6;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1520,7 +1531,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "9d083c85-5581-4e49-a59a-0c72bbbee706";
+				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1540,14 +1551,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WCP559CSE6;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1562,7 +1576,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "9d083c85-5581-4e49-a59a-0c72bbbee706";
+				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1571,47 +1585,55 @@
 		};
 		B72832081D34B99300E5E460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7198E8C488F15192E5381FD9 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C9938C770CD1BBE62825FD57 /* Pods-MyTake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				DEVELOPMENT_TEAM = WCP559CSE6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.MyTake;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d083c85-5581-4e49-a59a-0c72bbbee706";
+				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
+				PROVISIONING_PROFILE_SPECIFIER = "My-Take Missions";
 			};
 			name = Debug;
 		};
 		B72832091D34B99300E5E460 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7928A0EDED05B91D18EF56C /* Pods.release.xcconfig */;
+			baseConfigurationReference = D3EA9D3A64124715D3A2F5AC /* Pods-MyTake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				DEVELOPMENT_TEAM = WCP559CSE6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.MyTake;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d083c85-5581-4e49-a59a-0c72bbbee706";
+				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
+				PROVISIONING_PROFILE_SPECIFIER = "My-Take Missions";
 			};
 			name = Release;
 		};

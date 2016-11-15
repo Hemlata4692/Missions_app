@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>My-Take Missions</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -19,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -27,10 +29,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Access your camera, to take photos during certain missions. Such as photos of a store display or kitchen.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow Location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow Location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access your photo library for selection and uploading of multimedia during certain missions. Such as photos of a store display or kitchen.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HelveticaNeueLTCom-Bd.ttf</string>
