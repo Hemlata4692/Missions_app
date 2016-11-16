@@ -22,45 +22,51 @@
     tempArray=[missionDetailData.questionsArray mutableCopy];
     [database open];
     if (0==[self checkRecordExists:missionDetailData.missionId]) {
-    for (int i=0; i<tempArray.count; i++) {
-        QuestionModel *questionDetail=[tempArray objectAtIndex:i];
-        NSError *error;
-        NSString *attachments;
-        NSString *answerOptions;
-        NSString *scaleLabels;
-        //added try catch block to handle null exception
-        @try {
-            NSData *attachmentJsonData = [NSJSONSerialization dataWithJSONObject:questionDetail.answerAttachments
-                                                                         options:NSJSONWritingPrettyPrinted
-                                                                           error:&error];
-            attachments = [[NSString alloc] initWithData:attachmentJsonData encoding:NSUTF8StringEncoding];
-            
-        } @catch (NSException *exception) {
+        for (int i=0; i<tempArray.count; i++) {
+            QuestionModel *questionDetail=[tempArray objectAtIndex:i];
+            NSError *error;
+            NSString *attachments;
+            NSString *answerOptions;
+            NSString *scaleLabels;
+            //added try catch block to handle null exception
+            @try {
+                NSData *attachmentJsonData = [NSJSONSerialization dataWithJSONObject:questionDetail.answerAttachments
+                                                                             options:NSJSONWritingPrettyPrinted
+                                                                               error:&error];
+                attachments = [[NSString alloc] initWithData:attachmentJsonData encoding:NSUTF8StringEncoding];
+                NSRange range = NSMakeRange(0, [attachments length]);
+                attachments=[attachments stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
+                
+            } @catch (NSException *exception) {
+            }
+            @try {
+                NSData *answerOptionsData = [NSJSONSerialization dataWithJSONObject:questionDetail.answerOptions
+                                                                            options:NSJSONWritingPrettyPrinted
+                                                                              error:&error];
+                answerOptions = [[NSString alloc] initWithData:answerOptionsData encoding:NSUTF8StringEncoding];
+                NSRange range = NSMakeRange(0, [answerOptions length]);
+                answerOptions=[answerOptions stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
+                
+            } @catch (NSException *exception) {
+            }
+            @try {
+                
+                NSData *scaleLabelsData = [NSJSONSerialization dataWithJSONObject:questionDetail.scaleLables
+                                                                          options:NSJSONWritingPrettyPrinted
+                                                                            error:&error];
+                scaleLabels = [[NSString alloc] initWithData:scaleLabelsData encoding:NSUTF8StringEncoding];
+                NSRange range = NSMakeRange(0, [scaleLabels length]);
+                scaleLabels=[scaleLabels stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
+                
+            } @catch (NSException *exception) {
+            }
+            //insert mission details data in database
+            [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@',\"%@\",'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
         }
-        @try {
-            NSData *answerOptionsData = [NSJSONSerialization dataWithJSONObject:questionDetail.answerOptions
-                                                                        options:NSJSONWritingPrettyPrinted
-                                                                          error:&error];
-            answerOptions = [[NSString alloc] initWithData:answerOptionsData encoding:NSUTF8StringEncoding];
-            
-        } @catch (NSException *exception) {
-        }
-        @try {
-            
-            NSData *scaleLabelsData = [NSJSONSerialization dataWithJSONObject:questionDetail.scaleLables
-                                                                      options:NSJSONWritingPrettyPrinted
-                                                                        error:&error];
-            scaleLabels = [[NSString alloc] initWithData:scaleLabelsData encoding:NSUTF8StringEncoding];
-            
-        } @catch (NSException *exception) {
-        }
-        //insert mission details data in database
-        [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
+        //update mission table with welcom message and end message
+        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = \"%@\",end_message = \"%@\" where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
+        [database close];
     }
-    //update mission table with welcom message and end message
-    [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = '%@',end_message = '%@' where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
-    [database close];
-}
     else {
         for (int i=0; i<tempArray.count; i++) {
             QuestionModel *questionDetail=[tempArray objectAtIndex:i];
@@ -74,6 +80,8 @@
                                                                              options:NSJSONWritingPrettyPrinted
                                                                                error:&error];
                 attachments = [[NSString alloc] initWithData:attachmentJsonData encoding:NSUTF8StringEncoding];
+                NSRange range = NSMakeRange(0, [attachments length]);
+                attachments=[attachments stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
                 
             } @catch (NSException *exception) {
             }
@@ -82,6 +90,8 @@
                                                                             options:NSJSONWritingPrettyPrinted
                                                                               error:&error];
                 answerOptions = [[NSString alloc] initWithData:answerOptionsData encoding:NSUTF8StringEncoding];
+                NSRange range = NSMakeRange(0, [answerOptions length]);
+                answerOptions=[answerOptions stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
                 
             } @catch (NSException *exception) {
             }
@@ -91,13 +101,15 @@
                                                                           options:NSJSONWritingPrettyPrinted
                                                                             error:&error];
                 scaleLabels = [[NSString alloc] initWithData:scaleLabelsData encoding:NSUTF8StringEncoding];
+                NSRange range = NSMakeRange(0, [scaleLabels length]);
+                scaleLabels=[scaleLabels stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
                 
             } @catch (NSException *exception) {
             }
             //update time stamp of mission in mission detail table if changed
             [database executeUpdate:[NSString stringWithFormat:@"Update mission_question SET timestamp='%@' where user_id = '%@' AND mission_id = '%@'",missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"],missionDetailData.missionId]];
         }
-     }
+    }
 }
 #pragma mark - end
 
@@ -127,7 +139,7 @@
     //fetch questions of mission
     FMResultSet *results = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM mission_question where mission_id = '%@' AND user_id ='%@'",[UserDefaultManager getValue:@"missionId"],[UserDefaultManager getValue:@"userId"]]];
     while([results next])
-{
+    {
         QuestionModel *questionDetail = [[QuestionModel alloc] init];
         questionDetail.questionId = [results stringForColumn:@"step_id"];
         questionDetail.questionTitle = [results stringForColumn:@"question"];

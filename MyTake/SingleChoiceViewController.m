@@ -257,6 +257,11 @@
         else {
             AnswerModel *answerData=[AnswerModel new];
             answerData.stepId=questionData.questionId;
+            
+            //special charater replaced
+            NSRange range = NSMakeRange(0, [cell.pleaseSpecifyAnswerTextView.text length]);
+            cell.pleaseSpecifyAnswerTextView.text=[cell.pleaseSpecifyAnswerTextView.text stringByReplacingOccurrencesOfString:@"'" withString:@"''" options:NSCaseInsensitiveSearch range:range];
+            
             if ([[[singleChoiceListData objectAtIndex:selectedIndex] isOther] intValue]==1) {
                 answerData.singleAnswer=[NSString stringWithFormat:@"%@,%@",[[singleChoiceListData objectAtIndex:selectedIndex] answerId],cell.pleaseSpecifyAnswerTextView.text];
             }

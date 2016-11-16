@@ -20,7 +20,7 @@
     [database open];
     //insert data in mission table
     if (0==[self checkRecordExists:missionListData.missionId]) {
-          [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission(user_id,mission_id,mission_status,mission_image,mission_title,mission_startdate,mission_enddate,timestamp,status,sort_date) values('%@','%@','%@','%@','%@','%@','%@','%@','%@', '%@')",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionListData.missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,missionListData.sortDate]];
+        [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission(user_id,mission_id,mission_status,mission_image,mission_title,mission_startdate,mission_enddate,timestamp,status,sort_date) values('%@','%@','%@','%@','%@','%@','%@','%@','%@', '%@')",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionListData.missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,missionListData.sortDate]];
     }
     //update mission table data if time stamp is changed
     else {
@@ -34,7 +34,7 @@
     [database open];
     //update mission table if mission status is changed
     [database executeUpdate:[NSString stringWithFormat:@"Update mission SET user_id = '%@',mission_id = '%@',mission_status = '%@',mission_image = '%@',mission_title = '%@',mission_startdate = '%@',mission_enddate = '%@',timestamp = '%@',status ='%@',sort_date ='%@' where user_id = '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionListData.missionId,missionStatus,missionListData.missionImage,missionListData.missionTitle,missionListData.missionStartDate,missionListData.missionEndDate,missionListData.timeStamp,missionListData.status,missionListData.sortDate,[UserDefaultManager getValue:@"userId"],missionListData.missionId]];
-      [database close];
+    [database close];
 }
 #pragma mark - end
 
@@ -123,7 +123,7 @@
     sqlite3 *database = nil;
     if (sqlite3_open([[myDelegate getDBPath] UTF8String], &database) == SQLITE_OK)
     {
-       //check if record exists for same user and same mission
+        //check if record exists for same user and same mission
         NSString *query=[NSString stringWithFormat:@"SELECT COUNT(*) FROM mission where user_id = '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionId];
         const char* sqlStatement = [query UTF8String];
         sqlite3_stmt *statement;
