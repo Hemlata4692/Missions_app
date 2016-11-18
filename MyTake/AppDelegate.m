@@ -13,13 +13,16 @@
 #import "MissionListDatabase.h"
 #import "GAI.h"
 #import "AFNetworkReachabilityManager.h"
+#import <UserNotifications/UserNotifications.h>
+
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 static NSString *databaseName=@"MyTake.sqlite";
 
 @import GoogleMaps;
 @import GooglePlacePicker;
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 {
     UIView *loaderView;
     UIImageView *spinnerBackground;
@@ -160,13 +163,16 @@ id<GAITracker> tracker;
 #pragma mark - Push notification methods
 //get permission for iphone and ipad devices to receive push notifications
 - (void)registerDeviceForNotification {
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
+            if( !error ){
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];
     }
-    else
-    {
+    else {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
@@ -179,5 +185,11 @@ id<GAITracker> tracker;
     [UserDefaultManager setValue:token key:@"deviceToken"];
 }
 //end
+#pragma mark - end
+
+#pragma mark - UNUserNotificationCenter Delegate // >= iOS 10
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    NSLog(@"User Info = %@",response.notification.request.content.userInfo);
+}
 #pragma mark - end
 @end

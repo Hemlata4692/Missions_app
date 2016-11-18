@@ -129,6 +129,9 @@
     if (([[UIDevice currentDevice] userInterfaceIdiom] !=  UIUserInterfaceIdiomPad) && (0!=questionData.answerAttachments.count)) {
         [self.scrollView setContentOffset:CGPointMake(0, 210) animated:YES];
     }
+    else if (([[UIDevice currentDevice] userInterfaceIdiom] !=  UIUserInterfaceIdiomPad)) {
+        [self.scrollView setContentOffset:CGPointMake(0, 140) animated:YES];
+    }
 }
 #pragma mark - end
 

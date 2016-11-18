@@ -106,6 +106,7 @@
 		B7E0DCDE1D5085E000764DBD /* MissionListDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DCDD1D5085E000764DBD /* MissionListDatabase.m */; };
 		B7E0DCE01D50862100764DBD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E0DCDF1D50862100764DBD /* libsqlite3.tbd */; };
 		B7E0DCE21D50865300764DBD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E0DCE11D50865300764DBD /* libz.tbd */; };
+		B7EC8E301DDEC09C00D0AC76 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EC8E2F1DDEC09C00D0AC76 /* UserNotifications.framework */; };
 		B7F2E7471D4A097F00ECEC9C /* user_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F2E7461D4A097F00ECEC9C /* user_thumbnail.png */; };
 		B7F4BB961D5C38BF00B63F13 /* SingleChoiceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4BB951D5C38BF00B63F13 /* SingleChoiceViewCell.m */; };
 		DB90C6271DA3E5B50039B2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B796078A1D62C79F00D60878 /* libGoogleAnalyticsServices.a */; };
@@ -305,6 +306,7 @@
 		B7E0DCDD1D5085E000764DBD /* MissionListDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionListDatabase.m; sourceTree = "<group>"; };
 		B7E0DCDF1D50862100764DBD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B7E0DCE11D50865300764DBD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B7EC8E2F1DDEC09C00D0AC76 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B7F2E7461D4A097F00ECEC9C /* user_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_thumbnail.png; sourceTree = "<group>"; };
 		B7F4BB941D5C38BF00B63F13 /* SingleChoiceViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceViewCell.h; sourceTree = "<group>"; };
 		B7F4BB951D5C38BF00B63F13 /* SingleChoiceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceViewCell.m; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EC8E301DDEC09C00D0AC76 /* UserNotifications.framework in Frameworks */,
 				B7AF68701D6C0B9300B85281 /* CoreLocation.framework in Frameworks */,
 				B79250851D6B078200754975 /* MapKit.framework in Frameworks */,
 				B75DBDC71D6C1EF000FF472A /* AVKit.framework in Frameworks */,
@@ -346,6 +349,7 @@
 		AA4858590D1BB715EFD3768E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7EC8E2F1DDEC09C00D0AC76 /* UserNotifications.framework */,
 				B7AF686F1D6C0B9300B85281 /* CoreLocation.framework */,
 				B79250841D6B078200754975 /* MapKit.framework */,
 				B75DBDC61D6C1EF000FF472A /* AVKit.framework */,
@@ -1284,9 +1288,11 @@
 				TargetAttributes = {
 					B72831EF1D34B99300E5E460 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = WCP559CSE6;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1350,7 +1356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F15F073B161A3F652481B0AC /* [CP] Copy Pods Resources */ = {
@@ -1590,9 +1596,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				DEVELOPMENT_TEAM = WCP559CSE6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
@@ -1604,10 +1610,10 @@
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranoays.MyTake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
-				PROVISIONING_PROFILE_SPECIFIER = "My-Take Missions";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1618,9 +1624,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				DEVELOPMENT_TEAM = WCP559CSE6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
@@ -1630,10 +1636,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranoays.MyTake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
-				PROVISIONING_PROFILE_SPECIFIER = "My-Take Missions";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

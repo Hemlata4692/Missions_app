@@ -35,6 +35,8 @@
 	<string>Allow Location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow Location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow Acces</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Access your photo library for selection and uploading of multimedia during certain missions. Such as photos of a store display or kitchen.</string>
 	<key>UIAppFonts</key>
@@ -63,7 +65,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Allow Acces</string>
 </dict>
 </plist>
