@@ -1284,10 +1284,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = Ranosys;
+				ORGANIZATIONNAME = "My-Take";
 				TargetAttributes = {
 					B72831EF1D34B99300E5E460 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = WCP559CSE6;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -1356,7 +1357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F15F073B161A3F652481B0AC /* [CP] Copy Pods Resources */ = {
@@ -1596,9 +1597,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WCP559CSE6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
@@ -1610,10 +1611,10 @@
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranoays.MyTake;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "fadba804-4b27-491f-bc37-9634de6800d9";
+				PROVISIONING_PROFILE_SPECIFIER = "MyTake Missions Dev";
 			};
 			name = Debug;
 		};
@@ -1624,9 +1625,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = WCP559CSE6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
@@ -1636,10 +1637,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranoays.MyTake;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3d5c088f-0050-4aa0-aaf9-c608156c5d98";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.my-take.My-TakeMissions";
 			};
 			name = Release;
 		};
