@@ -32,6 +32,8 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [self.manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"application/x-www-form-urlencoded", nil]];
+    //changes for https request
+    manager.securityPolicy.allowInvalidCertificates = YES;
     path = [NSString stringWithFormat:@"%@%@",@"http://ccc.my-take.com/api/mobile/",path];
     [manager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         responseObject=(NSMutableDictionary *)[NullValueChecker checkArrayForNullValue:[responseObject mutableCopy]];
@@ -57,6 +59,8 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [self.manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"application/x-www-form-urlencoded", nil]];
+    //changes for https request
+    manager.securityPolicy.allowInvalidCertificates = YES;
     path = [NSString stringWithFormat:@"%@%@",baseUrl,path];
     [manager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
          responseObject=(NSMutableDictionary *)[NullValueChecker checkArrayForNullValue:[responseObject mutableCopy]];
@@ -84,7 +88,7 @@
     [manager.requestSerializer setValue:@"parse-application-id-removed" forHTTPHeaderField:@"X-Parse-Application-Id"];
     [manager.requestSerializer setValue:@"parse-rest-api-key-removed" forHTTPHeaderField:@"X-Parse-REST-API-Key"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    manager.securityPolicy.allowInvalidCertificates = YES;
+    //code removed for https request
     [manager POST:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
          responseObject=(NSMutableDictionary *)[NullValueChecker checkArrayForNullValue:[responseObject mutableCopy]];
         success(responseObject);
