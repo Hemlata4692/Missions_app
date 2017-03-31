@@ -59,8 +59,6 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [self.manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"application/x-www-form-urlencoded", nil]];
-    //changes for https request
-    manager.securityPolicy.allowInvalidCertificates = YES;
     path = [NSString stringWithFormat:@"%@%@",baseUrl,path];
     [manager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
          responseObject=(NSMutableDictionary *)[NullValueChecker checkArrayForNullValue:[responseObject mutableCopy]];

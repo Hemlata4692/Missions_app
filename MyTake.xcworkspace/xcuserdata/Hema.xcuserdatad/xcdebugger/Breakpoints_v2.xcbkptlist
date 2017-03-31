@@ -90,7 +90,7 @@
                   moduleName = "MyTake"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ranosys/missions_app/MyTake/UploadMissionViewController.m"
-                  timestampString = "512628419.825905"
+                  timestampString = "512652151.298013"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -105,7 +105,7 @@
                   moduleName = "MyTake"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ranosys/missions_app/MyTake/UploadMissionViewController.m"
-                  timestampString = "512628419.828391"
+                  timestampString = "512652151.300144"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -201,22 +201,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyTake/DashboardViewController.m"
-            timestampString = "511360041.561478"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-getAllMissions"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MyTake/VideoUploadViewController.m"
             timestampString = "511425784.228879"
             startingColumnNumber = "9223372036854775807"
@@ -266,13 +250,109 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTake/BaseService.m"
-            timestampString = "512628156.194107"
+            timestampString = "512651708.801405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-get:parameters:onSuccess:onFailure:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BaseService get:parameters:onSuccess:onFailure:]"
+                  moduleName = "MyTake"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ranosys/missions_app/MyTake/BaseService.m"
+                  timestampString = "512652151.350004"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "810">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__50-[BaseService get:parameters:onSuccess:onFailure:]_block_invoke"
+                  moduleName = "MyTake"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ranosys/missions_app/MyTake/BaseService.m"
+                  timestampString = "512652151.352114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTake/BaseService.m"
+            timestampString = "512651709.681719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-get:parameters:onSuccess:onFailure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTake/BaseService.m"
+            timestampString = "512651774.303012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-post:parameters:onSuccess:onFailure:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BaseService post:parameters:onSuccess:onFailure:]"
+                  moduleName = "MyTake"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ranosys/missions_app/MyTake/BaseService.m"
+                  timestampString = "512652151.360945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "795">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__51-[BaseService post:parameters:onSuccess:onFailure:]_block_invoke"
+                  moduleName = "MyTake"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ranosys/missions_app/MyTake/BaseService.m"
+                  timestampString = "512652151.363037"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
