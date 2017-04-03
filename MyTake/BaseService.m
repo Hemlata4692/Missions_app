@@ -32,9 +32,14 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [self.manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"application/x-www-form-urlencoded", nil]];
-    //changes for https request
-    manager.securityPolicy.allowInvalidCertificates = YES;
+    //changes for certificate pinning
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"gd_bundle-g2-g1" ofType:@"crt"];
+    NSData *certData = [NSData dataWithContentsOfFile:cerPath];
+    [securityPolicy setAllowInvalidCertificates:NO];
+    [securityPolicy setPinnedCertificates:@[certData]];
     path = [NSString stringWithFormat:@"%@%@",@"http://ccc.my-take.com/api/mobile/",path];
+    //end
     [manager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         responseObject=(NSMutableDictionary *)[NullValueChecker checkArrayForNullValue:[responseObject mutableCopy]];
         success(responseObject);
@@ -86,7 +91,6 @@
     [manager.requestSerializer setValue:@"parse-application-id-removed" forHTTPHeaderField:@"X-Parse-Application-Id"];
     [manager.requestSerializer setValue:@"parse-rest-api-key-removed" forHTTPHeaderField:@"X-Parse-REST-API-Key"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    //code removed for https request
     [manager POST:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
          responseObject=(NSMutableDictionary *)[NullValueChecker checkArrayForNullValue:[responseObject mutableCopy]];
         success(responseObject);

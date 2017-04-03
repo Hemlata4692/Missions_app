@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B70415061D4F0BCD00CD03C4 /* DashboardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70415051D4F0BCD00CD03C4 /* DashboardViewCell.m */; };
 		B704150E1D4F80EB00CD03C4 /* MissionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B704150D1D4F80EB00CD03C4 /* MissionDetailModel.m */; };
+		B71A193F1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt in Resources */ = {isa = PBXBuildFile; fileRef = B71A193E1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt */; };
 		B723D5571D3E0BA70067AEB8 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B723D5561D3E0BA70067AEB8 /* ConnectionManager.m */; };
 		B723D55B1D3E0C360067AEB8 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = B723D55A1D3E0C360067AEB8 /* LoginService.m */; };
 		B72770F31D48866D0005BBE4 /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B72770E51D48866D0005BBE4 /* AMSlideMenuContentSegue.m */; };
@@ -119,6 +120,7 @@
 		B70415051D4F0BCD00CD03C4 /* DashboardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewCell.m; sourceTree = "<group>"; };
 		B704150C1D4F80EB00CD03C4 /* MissionDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionDetailModel.h; sourceTree = "<group>"; };
 		B704150D1D4F80EB00CD03C4 /* MissionDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionDetailModel.m; sourceTree = "<group>"; };
+		B71A193E1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "gd_bundle-g2-g1.crt"; sourceTree = "<group>"; };
 		B723D5551D3E0BA70067AEB8 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		B723D5561D3E0BA70067AEB8 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		B723D5591D3E0C360067AEB8 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
@@ -980,6 +982,7 @@
 				B723D5541D3E0B8B0067AEB8 /* ConnectionManager */,
 				B73F7CE01D3516ED003C8ECC /* BaseService.h */,
 				B73F7CE11D3516ED003C8ECC /* BaseService.m */,
+				B71A193E1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt */,
 			);
 			name = GlobalWebservice;
 			sourceTree = "<group>";
@@ -1288,7 +1291,7 @@
 				TargetAttributes = {
 					B72831EF1D34B99300E5E460 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = WCP559CSE6;
+						DevelopmentTeam = 6S3AL87NGN;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -1333,6 +1336,7 @@
 				B7723CF91D47757D0006BA8C /* bg-568h@2x.png in Resources */,
 				B7723CF11D476CE30006BA8C /* HelveticaNeueLTCom-Lt.ttf in Resources */,
 				B796FCBF1D5AEEF300E9B6E0 /* EmojisPList.plist in Resources */,
+				B71A193F1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt in Resources */,
 				B7723CFD1D47757D0006BA8C /* bg-ipad@2x.png in Resources */,
 				B72832001D34B99300E5E460 /* Assets.xcassets in Resources */,
 				B7A9DE8D1D9E278A0080B688 /* MyTake.sqlite in Resources */,
@@ -1512,11 +1516,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WCP559CSE6;
+				DEVELOPMENT_TEAM = 6S3AL87NGN;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1538,7 +1542,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
+				PROVISIONING_PROFILE = "cb1bdc96-8362-42eb-8874-9464865067f4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1564,11 +1568,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = WCP559CSE6;
+				DEVELOPMENT_TEAM = 6S3AL87NGN;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1583,7 +1587,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "532d9c77-0996-42f2-be4d-2a33d63669e1";
+				PROVISIONING_PROFILE = "cb1bdc96-8362-42eb-8874-9464865067f4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1597,9 +1601,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WCP559CSE6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				DEVELOPMENT_TEAM = 6S3AL87NGN;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
@@ -1611,10 +1615,10 @@
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.MyTake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fadba804-4b27-491f-bc37-9634de6800d9";
-				PROVISIONING_PROFILE_SPECIFIER = "MyTake Missions Dev";
+				PROVISIONING_PROFILE = "cb1bdc96-8362-42eb-8874-9464865067f4";
+				PROVISIONING_PROFILE_SPECIFIER = My_Take_inhouse_march_16_2017;
 			};
 			name = Debug;
 		};
@@ -1625,9 +1629,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = MyTake/MyTake.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MyTake LLC (WCP559CSE6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = WCP559CSE6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Technopreneur's Resource Centre Private Limited";
+				DEVELOPMENT_TEAM = 6S3AL87NGN;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "MyTake/MyTake-Prefix.pch";
 				INFOPLIST_FILE = MyTake/Info.plist;
@@ -1637,10 +1641,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.my-take.My-TakeMissions";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.MyTake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3d5c088f-0050-4aa0-aaf9-c608156c5d98";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.my-take.My-TakeMissions";
+				PROVISIONING_PROFILE = "cb1bdc96-8362-42eb-8874-9464865067f4";
+				PROVISIONING_PROFILE_SPECIFIER = My_Take_inhouse_march_16_2017;
 			};
 			name = Release;
 		};
