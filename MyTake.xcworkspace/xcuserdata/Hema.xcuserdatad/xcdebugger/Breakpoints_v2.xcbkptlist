@@ -16,23 +16,7 @@
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "-viewWillAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyTake/AudioUploadViewController.m"
-            timestampString = "496913699.811963"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "-recording:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -48,7 +32,7 @@
             startingLineNumber = "279"
             endingLineNumber = "279"
             landmarkName = "-recordStop:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,7 +48,7 @@
             startingLineNumber = "320"
             endingLineNumber = "320"
             landmarkName = "-recordCancel:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -80,7 +64,7 @@
             startingLineNumber = "177"
             endingLineNumber = "177"
             landmarkName = "-uploadMission:mediaType:stepId:requestDict:success:onFailure:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,7 +80,7 @@
             startingLineNumber = "134"
             endingLineNumber = "134"
             landmarkName = "-uploadCompletedMission:filePath:mediaType:stepId:"
-            landmarkType = "5">
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -106,7 +90,7 @@
                   moduleName = "MyTake"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ranosys/missions_app/MyTake/UploadMissionViewController.m"
-                  timestampString = "501145354.120694"
+                  timestampString = "512655419.284905"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -121,7 +105,7 @@
                   moduleName = "MyTake"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ranosys/missions_app/MyTake/UploadMissionViewController.m"
-                  timestampString = "501145354.122739"
+                  timestampString = "512655419.286993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -144,7 +128,7 @@
             startingLineNumber = "96"
             endingLineNumber = "96"
             landmarkName = "-uploadCompletedMission"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,7 +144,7 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -208,6 +192,38 @@
             startingLineNumber = "104"
             endingLineNumber = "104"
             landmarkName = "-fetchEmojiFromPlistAndAddAtatchmentView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTake/ImageUploadViewController.m"
+            timestampString = "511425875.987506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "-nextButtonAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTake/UploadMissionViewController.m"
+            timestampString = "511425996.546183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-uploadCompletedMission"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
