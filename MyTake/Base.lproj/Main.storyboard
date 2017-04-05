@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="auH-8u-5xw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="auH-8u-5xw">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -577,9 +577,9 @@
                                     <constraint firstItem="M7t-cC-Ozu" firstAttribute="leading" secondItem="6HK-GP-ayK" secondAttribute="leading" constant="1" id="jks-sh-ccs"/>
                                 </constraints>
                             </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Developement." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWE-re-ytc">
-                                <rect key="frame" x="0.0" y="242" width="320" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWE-re-ytc">
+                                <rect key="frame" x="0.0" y="238" width="320" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -589,8 +589,8 @@
                             <constraint firstItem="6HK-GP-ayK" firstAttribute="top" secondItem="C8s-dv-WyJ" secondAttribute="bottom" constant="10" id="8QE-7U-Jl7"/>
                             <constraint firstAttribute="trailing" secondItem="lWE-re-ytc" secondAttribute="trailing" id="9ix-BP-hiQ"/>
                             <constraint firstAttribute="trailing" secondItem="6HK-GP-ayK" secondAttribute="trailing" constant="10" id="EiK-GJ-75b"/>
-                            <constraint firstItem="lWE-re-ytc" firstAttribute="top" secondItem="C8s-dv-WyJ" secondAttribute="bottom" constant="242" id="OS0-9X-89D"/>
-                            <constraint firstItem="fUX-M7-8ZW" firstAttribute="top" secondItem="lWE-re-ytc" secondAttribute="bottom" constant="241" id="Sx2-k9-lkF"/>
+                            <constraint firstItem="lWE-re-ytc" firstAttribute="top" secondItem="C8s-dv-WyJ" secondAttribute="bottom" constant="238" id="OS0-9X-89D"/>
+                            <constraint firstItem="fUX-M7-8ZW" firstAttribute="top" secondItem="lWE-re-ytc" secondAttribute="bottom" constant="238" id="Sx2-k9-lkF"/>
                             <constraint firstItem="6HK-GP-ayK" firstAttribute="leading" secondItem="W5a-tg-1qG" secondAttribute="leading" constant="10" id="cX9-VA-bp9"/>
                             <constraint firstItem="fUX-M7-8ZW" firstAttribute="top" secondItem="6HK-GP-ayK" secondAttribute="bottom" constant="10" id="xfV-JF-gXC"/>
                             <constraint firstItem="lWE-re-ytc" firstAttribute="leading" secondItem="W5a-tg-1qG" secondAttribute="leading" id="z8M-Sw-A1s"/>

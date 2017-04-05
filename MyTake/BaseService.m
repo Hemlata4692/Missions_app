@@ -8,6 +8,7 @@
 
 #import "BaseService.h"
 #import "NullValueChecker.h"
+#import "MainSideBarViewController.h"
 
 @implementation BaseService
 
@@ -79,7 +80,20 @@
             messageString=error.localizedDescription;
         }
         SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        //if application version is lower then 1.2 redirect to mission listing screen
+        if ([[messageString lowercaseString] containsString:@"version"] || [[messageString lowercaseString] containsString:@"download"]) {
+            [alert addButton:@"Ok" actionBlock:^(void) {
+                UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                MainSideBarViewController * homeView = [storyboard instantiateViewControllerWithIdentifier:@"MainSideBarViewController"];
+                [myDelegate.window setRootViewController:homeView];
+                [myDelegate.window makeKeyAndVisible];
+            }];
+            [alert showWarning:nil title:@"Alert" subTitle:messageString closeButtonTitle:nil duration:0.0f];
+        }
+        //else 
+        else {
          [alert showWarning:nil title:@"Alert" subTitle:messageString closeButtonTitle:@"Ok" duration:0.0f];
+        }
     }];
 }
 

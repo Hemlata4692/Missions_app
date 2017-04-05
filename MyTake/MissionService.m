@@ -33,7 +33,8 @@ static NSString *kMarkMissionComplete=@"/api/missions/markMissionComplete";
 #pragma mark- Misson details
 - (void)getMissionDetail:(MissionDetailModel *)missionData onSuccess:(void (^)(id))success onFailure:(void (^)(NSError *))failure
 {
-    NSDictionary *parameters = @{@"api_token" :[UserDefaultManager getValue:@"apiKey"],@"MissionID":[UserDefaultManager getValue:@"missionId"]};
+    //added version parameter for version check.
+    NSDictionary *parameters = @{@"api_token" :[UserDefaultManager getValue:@"apiKey"],@"MissionID":[UserDefaultManager getValue:@"missionId"],@"appVersion":@"1.02"};
     super.baseUrl=[UserDefaultManager getValue:@"baseUrl"];
     [super get:kMissionDetail parameters:parameters onSuccess:success onFailure:failure];
 }
