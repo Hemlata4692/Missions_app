@@ -99,7 +99,6 @@
             } @catch (NSException *exception) {
             }
             @try {
-                
                 NSData *scaleLabelsData = [NSJSONSerialization dataWithJSONObject:questionDetail.scaleLables
                                                                           options:NSJSONWritingPrettyPrinted
                                                                             error:&error];
