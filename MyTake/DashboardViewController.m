@@ -50,6 +50,12 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(handleEnterForeground)
+                                                 name: @"UIApplicationWillEnterForegroundNotification"
+                                               object: nil];
+    
     //call misison list data
     [myDelegate showIndicator];
     [self performSelector:@selector(getAllMissions) withObject:nil afterDelay:.1];
@@ -58,6 +64,18 @@
 }
 #pragma mark - end
 
+- (void)handleEnterForeground {
+
+    //call misison list data
+    [myDelegate showIndicator];
+    [self performSelector:@selector(getAllMissions) withObject:nil afterDelay:.1];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:YES];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 #pragma mark - Refresh table
 //Pull to refresh implementation on my submission data
 - (void)refreshTable {

@@ -68,6 +68,9 @@
         [database close];
     }
     else {
+        //delete all the data when time stamp is changed and insert new.
+        [self deleteAllRecords:missionDetailData];
+        
         for (int i=0; i<tempArray.count; i++) {
             QuestionModel *questionDetail=[tempArray objectAtIndex:i];
             NSError *error;
@@ -96,7 +99,6 @@
             } @catch (NSException *exception) {
             }
             @try {
-                
                 NSData *scaleLabelsData = [NSJSONSerialization dataWithJSONObject:questionDetail.scaleLables
                                                                           options:NSJSONWritingPrettyPrinted
                                                                             error:&error];
@@ -106,10 +108,22 @@
                 
             } @catch (NSException *exception) {
             }
-            //update time stamp of mission in mission detail table if changed
-            [database executeUpdate:[NSString stringWithFormat:@"Update mission_question SET timestamp='%@' where user_id = '%@' AND mission_id = '%@'",missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"],missionDetailData.missionId]];
+            //insert data if time stamp is updated
+            [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@',\"%@\",'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
         }
+        //update mission table with welcome message and end message
+        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = \"%@\",end_message = \"%@\" where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
     }
+}
+#pragma mark - end
+
+#pragma mark - Delete data from database
++ (void)deleteAllRecords:(MissionDetailModel *)missionDetailData {
+    FMDatabase *database = [FMDatabase databaseWithPath:[myDelegate getDBPath]];
+    [database open];
+    //delete mission
+    [database executeUpdate:[NSString stringWithFormat:@"DELETE FROM mission_question where user_id = '%@' AND mission_id = '%@'",[UserDefaultManager getValue:@"userId"],missionDetailData.missionId]];
+    [database close];
 }
 #pragma mark - end
 
