@@ -202,7 +202,7 @@
 //set screen navigation according to last answered question
 - (void)setScreenNavigation:(MissionDataModel *)data missionDetailData:(MissionDetailModel*)missionDetailData questionDetailDataArray:(NSMutableArray*)questionDetailDataArray{
     //move to last answered question
-    if (nil!=[UserDefaultManager getValue:@"progressDict"] && [[[UserDefaultManager getValue:@"progressDict"] allKeys] containsObject:[NSString stringWithFormat:@"%@,%@",[UserDefaultManager getValue:@"missionId"],[UserDefaultManager getValue:@"userId"]]]) {
+    if (nil!=[UserDefaultManager getValue:@"progressDict"] && [[[UserDefaultManager getValue:@"progressDict"] allKeys] containsObject:[NSString stringWithFormat:@"%@,%@",[UserDefaultManager getValue:@"missionId"],[UserDefaultManager getValue:@"userId"]]] && ![data.missionStatus isEqualToString:@"none"]) {
         [UserDefaultManager setValue:missionDetailData.welcomeMessage key:@"InstructionPopUp"];
         [UserDefaultManager setValue:@"In Progress" key:@"missionStarted"];
         [GlobalNavigationViewController setScreenNavigation:questionDetailDataArray step:[[[[[UserDefaultManager getValue:@"progressDict"] objectForKey:[NSString stringWithFormat:@"%@,%@",[UserDefaultManager getValue:@"missionId"],[UserDefaultManager getValue:@"userId"]]] componentsSeparatedByString:@","] objectAtIndex:0] intValue]];
