@@ -70,6 +70,7 @@
     [self.keyboardControls setDelegate:self];
     //display question from database
     questionData=[questionDetailArray objectAtIndex:[[[[[UserDefaultManager getValue:@"progressDict"] objectForKey:[NSString stringWithFormat:@"%@,%@",[UserDefaultManager getValue:@"missionId"],[UserDefaultManager getValue:@"userId"]]] componentsSeparatedByString:@","] objectAtIndex:0] intValue]];
+    questionData.scaleMaximum=@"15";
     self.questionTextView.text=questionData.questionTitle;
     //add shadow and corner radius on objects
     [self viewCustomization];
@@ -89,6 +90,8 @@
     scaleLabelDict=[questionData.scaleLables copy];
     //load image video view
     [self loadAttachmentView];
+    
+//    self.starCollectionView.backgroundColor=[UIColor grayColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -225,6 +228,17 @@
             }
             self.starRatingView.frame= CGRectMake(0, self.attachmentView.frame.origin.y+self.attachmentView.frame.size.height+25, [[UIScreen mainScreen] bounds].size.width-20, self.starRatingView.frame.size.height+60);
         }
+        else {
+        
+            if (([[UIDevice currentDevice] userInterfaceIdiom] ==  UIUserInterfaceIdiomPad)) {
+                self.starCollectionView.frame = CGRectMake((([[UIScreen mainScreen] bounds].size.width-20)/2) - 275, self.starCollectionView.frame.origin.y, 550, 50);
+            }
+            //change framing for iPhone devices
+            else{
+                self.starCollectionView.frame=CGRectMake(8, self.starCollectionView.frame.origin.y, [[UIScreen mainScreen] bounds].size.width-36, self.starCollectionView.frame.size.height);
+            }
+            self.starRatingView.frame= CGRectMake(0, self.attachmentView.frame.origin.y+self.attachmentView.frame.size.height+25, [[UIScreen mainScreen] bounds].size.width-20, self.starRatingView.frame.size.height+60);
+        }
     }
 }
 #pragma mark - end
@@ -261,6 +275,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    NSLog(@"%d",[questionData.scaleMaximum intValue]);
     if ([questionData.allowNoRate isEqualToString:@"1"]) {
         return [questionData.scaleMaximum intValue]+1;
     }

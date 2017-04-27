@@ -290,7 +290,7 @@
 		B7AF686F1D6C0B9300B85281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B7AF68781D6C2B3900B85281 /* SelectPlacesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlacesViewCell.h; sourceTree = "<group>"; };
 		B7AF68791D6C2B3900B85281 /* SelectPlacesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlacesViewCell.m; sourceTree = "<group>"; };
-		B7D2D6121EB1D38800C42FA9 /* MyTake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTake.entitlements; sourceTree = "<group>"; };
+		B7D2D6131EB2206800C42FA9 /* MyTake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTake.entitlements; sourceTree = "<group>"; };
 		B7D52F371D6DCAB000A5217F /* ImageGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGalleryViewController.h; sourceTree = "<group>"; };
 		B7D52F381D6DCAB000A5217F /* ImageGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGalleryViewController.m; sourceTree = "<group>"; };
 		B7D52F3B1D6DD8B500A5217F /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 		B72831F21D34B99300E5E460 /* MyTake */ = {
 			isa = PBXGroup;
 			children = (
-				B7D2D6121EB1D38800C42FA9 /* MyTake.entitlements */,
+				B7D2D6131EB2206800C42FA9 /* MyTake.entitlements */,
 				B728320D1D34BA3A00E5E460 /* AppDelegate */,
 				B728320F1D34BA6000E5E460 /* Models */,
 				B728324F1D34BC2F00E5E460 /* ServerCommunication */,
