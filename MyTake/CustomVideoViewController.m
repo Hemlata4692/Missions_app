@@ -60,6 +60,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 #pragma mark - Life cycle
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [[self captureButton] setSelected:NO];
     //Set image at capture button with different states
@@ -67,11 +68,13 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     [self.captureButton setImage:[UIImage imageNamed:@"recordplay"] forState:UIControlStateSelected];
     // Create the AVCaptureSession
     [self avCaptureSessionMethod];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    
     [UIApplication sharedApplication].idleTimerDisabled = YES;  //Disable sleep mode
     [self viewCustomisation];
 }
@@ -462,10 +465,17 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     revertButton.enabled=true;
     revertButton.alpha=1.0f;
     if (sizeExceed == 1) {
-        [self.view makeToast:@"Your device storage is full."];
+        
+        //Alert added by Rohit Modi
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showWarning:nil title:@"Alert" subTitle:@"Your device storage is full." closeButtonTitle:@"Done" duration:0.0f];
     }
     else if (sizeExceed == 2){
-        [self.view makeToast:[NSString stringWithFormat:@"The video recording is too long and exceeds our max size %d MB. Please try recording a shorter video.",maxSize]];
+        
+        //Alert added by Rohit Modi
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showWarning:nil title:@"Alert" subTitle:[NSString stringWithFormat:@"The video recording is too long and exceeds our max size %d MB. Please try recording a shorter video.",maxSize] closeButtonTitle:@"Done" duration:0.0f];
+//        [self.view makeToast:[NSString stringWithFormat:@"The video recording is too long and exceeds our max size %d MB. Please try recording a shorter video.",maxSize]];
     }
 }
 #pragma mark - end
