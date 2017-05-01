@@ -290,6 +290,7 @@
 		B7AF686F1D6C0B9300B85281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B7AF68781D6C2B3900B85281 /* SelectPlacesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlacesViewCell.h; sourceTree = "<group>"; };
 		B7AF68791D6C2B3900B85281 /* SelectPlacesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlacesViewCell.m; sourceTree = "<group>"; };
+		B7D2D6131EB2206800C42FA9 /* MyTake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTake.entitlements; sourceTree = "<group>"; };
 		B7D52F371D6DCAB000A5217F /* ImageGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGalleryViewController.h; sourceTree = "<group>"; };
 		B7D52F381D6DCAB000A5217F /* ImageGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGalleryViewController.m; sourceTree = "<group>"; };
 		B7D52F3B1D6DD8B500A5217F /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
@@ -314,7 +315,6 @@
 		B7F4BB951D5C38BF00B63F13 /* SingleChoiceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceViewCell.m; sourceTree = "<group>"; };
 		C9938C770CD1BBE62825FD57 /* Pods-MyTake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTake/Pods-MyTake.debug.xcconfig"; sourceTree = "<group>"; };
 		D3EA9D3A64124715D3A2F5AC /* Pods-MyTake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTake.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTake/Pods-MyTake.release.xcconfig"; sourceTree = "<group>"; };
-		DBBF2FFE1DC13F6E00D2108F /* MyTake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTake.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,7 +460,7 @@
 		B72831F21D34B99300E5E460 /* MyTake */ = {
 			isa = PBXGroup;
 			children = (
-				DBBF2FFE1DC13F6E00D2108F /* MyTake.entitlements */,
+				B7D2D6131EB2206800C42FA9 /* MyTake.entitlements */,
 				B728320D1D34BA3A00E5E460 /* AppDelegate */,
 				B728320F1D34BA6000E5E460 /* Models */,
 				B728324F1D34BC2F00E5E460 /* ServerCommunication */,
