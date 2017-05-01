@@ -70,7 +70,6 @@
     [self.keyboardControls setDelegate:self];
     //display question from database
     questionData=[questionDetailArray objectAtIndex:[[[[[UserDefaultManager getValue:@"progressDict"] objectForKey:[NSString stringWithFormat:@"%@,%@",[UserDefaultManager getValue:@"missionId"],[UserDefaultManager getValue:@"userId"]]] componentsSeparatedByString:@","] objectAtIndex:0] intValue]];
-    questionData.scaleMaximum=@"15";
     self.questionTextView.text=questionData.questionTitle;
     //add shadow and corner radius on objects
     [self viewCustomization];
