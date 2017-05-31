@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3274A3141EDEF3DE00D37E32 /* MyTake.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3274A3131EDEF3DE00D37E32 /* MyTake.sqlite */; };
 		B70415061D4F0BCD00CD03C4 /* DashboardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70415051D4F0BCD00CD03C4 /* DashboardViewCell.m */; };
 		B704150E1D4F80EB00CD03C4 /* MissionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B704150D1D4F80EB00CD03C4 /* MissionDetailModel.m */; };
 		B71A193F1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt in Resources */ = {isa = PBXBuildFile; fileRef = B71A193E1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt */; };
@@ -94,7 +95,6 @@
 		B796FCBF1D5AEEF300E9B6E0 /* EmojisPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B796FCBE1D5AEEF300E9B6E0 /* EmojisPList.plist */; };
 		B79BC6801D67183300C5EE39 /* AudioUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79BC67F1D67183300C5EE39 /* AudioUploadViewController.m */; };
 		B7A640E01D671B1700B3E908 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A640DF1D671B1700B3E908 /* HelpViewController.m */; };
-		B7A9DE8D1D9E278A0080B688 /* MyTake.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B7A9DE8C1D9E278A0080B688 /* MyTake.sqlite */; };
 		B7AF68701D6C0B9300B85281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AF686F1D6C0B9300B85281 /* CoreLocation.framework */; };
 		B7AF687A1D6C2B3900B85281 /* SelectPlacesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AF68791D6C2B3900B85281 /* SelectPlacesViewCell.m */; };
 		B7D52F391D6DCAB000A5217F /* ImageGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D52F381D6DCAB000A5217F /* ImageGalleryViewController.m */; };
@@ -115,6 +115,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3274A3131EDEF3DE00D37E32 /* MyTake.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyTake.sqlite; sourceTree = "<group>"; };
 		883F21998AF9FF69F9364060 /* libPods-MyTake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70415041D4F0BCD00CD03C4 /* DashboardViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewCell.h; sourceTree = "<group>"; };
 		B70415051D4F0BCD00CD03C4 /* DashboardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewCell.m; sourceTree = "<group>"; };
@@ -286,7 +287,6 @@
 		B79BC67F1D67183300C5EE39 /* AudioUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioUploadViewController.m; sourceTree = "<group>"; };
 		B7A640DE1D671B1700B3E908 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		B7A640DF1D671B1700B3E908 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		B7A9DE8C1D9E278A0080B688 /* MyTake.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyTake.sqlite; sourceTree = "<group>"; };
 		B7AF686F1D6C0B9300B85281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B7AF68781D6C2B3900B85281 /* SelectPlacesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlacesViewCell.h; sourceTree = "<group>"; };
 		B7AF68791D6C2B3900B85281 /* SelectPlacesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlacesViewCell.m; sourceTree = "<group>"; };
@@ -1222,7 +1222,7 @@
 		B7E0DCD61D5084D500764DBD /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				B7A9DE8C1D9E278A0080B688 /* MyTake.sqlite */,
+				3274A3131EDEF3DE00D37E32 /* MyTake.sqlite */,
 				B73625B71D53063200FC0BA4 /* MissionListDatabase */,
 				B73625B81D53064400FC0BA4 /* MissionDetailDatabase */,
 				B75810941D59E52700A93788 /* AnswerDatabase */,
@@ -1335,11 +1335,11 @@
 				B7723CFA1D47757D0006BA8C /* bg-667h@2x.png in Resources */,
 				B7723CF91D47757D0006BA8C /* bg-568h@2x.png in Resources */,
 				B7723CF11D476CE30006BA8C /* HelveticaNeueLTCom-Lt.ttf in Resources */,
+				3274A3141EDEF3DE00D37E32 /* MyTake.sqlite in Resources */,
 				B796FCBF1D5AEEF300E9B6E0 /* EmojisPList.plist in Resources */,
 				B71A193F1E8E7DBC004F2822 /* gd_bundle-g2-g1.crt in Resources */,
 				B7723CFD1D47757D0006BA8C /* bg-ipad@2x.png in Resources */,
 				B72832001D34B99300E5E460 /* Assets.xcassets in Resources */,
-				B7A9DE8D1D9E278A0080B688 /* MyTake.sqlite in Resources */,
 				B7723CFE1D47757D0006BA8C /* bg.png in Resources */,
 				B79607911D633DCA00D60878 /* video_placeholder.png in Resources */,
 				B72831FE1D34B99300E5E460 /* Main.storyboard in Resources */,
@@ -1361,7 +1361,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F15F073B161A3F652481B0AC /* [CP] Copy Pods Resources */ = {
