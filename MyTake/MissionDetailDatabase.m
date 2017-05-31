@@ -61,10 +61,10 @@
             } @catch (NSException *exception) {
             }
             //insert mission details data in database
-            [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@',\"%@\",'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
+            [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
         }
         //update mission table with welcom message and end message
-        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = \"%@\",end_message = \"%@\" where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
+        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = '%@',end_message = '%@' where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
         [database close];
     }
     else {
@@ -109,10 +109,10 @@
             } @catch (NSException *exception) {
             }
             //insert data if time stamp is updated
-            [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@',\"%@\",'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
+            [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
         }
         //update mission table with welcome message and end message
-        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = \"%@\",end_message = \"%@\" where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
+        [database executeUpdate:[NSString stringWithFormat:@"Update mission SET welcome_message = '%@',end_message = '%@' where mission_id = '%@' AND user_id = '%@'",missionDetailData.welcomeMessage,missionDetailData.endMessage,missionDetailData.missionId,[UserDefaultManager getValue:@"userId"]]];
     }
 }
 #pragma mark - end

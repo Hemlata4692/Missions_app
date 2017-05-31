@@ -105,7 +105,7 @@
     //start AVAudio session for audio recording
     NSURL *outputFileURL = [NSURL URLWithString:audioFilePath];
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
     
     //define the recorder setting
     NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
