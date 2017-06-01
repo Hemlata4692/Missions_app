@@ -61,6 +61,9 @@
             } @catch (NSException *exception) {
             }
             //insert mission details data in database
+//            questionDetail.questionTitle=[NSString stringWithFormat:@"gef rt'gh uyjuio"];
+//            questionDetail.questionTitle = [questionDetail.questionTitle stringByReplacingOccurrencesOfString:@"'" withString:@"%\'"];
+            
             [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_question(mission_id,step_id,type,question,attachments,is_why,scale_min,scale_max,allow_no_rate,max_size,scale_labels,answer_options,timestamp,user_id) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",missionDetailData.missionId,questionDetail.questionId,questionDetail.questionType,questionDetail.questionTitle,attachments,questionDetail.isWhy,questionDetail.scaleMinimum,questionDetail.scaleMaximum,questionDetail.allowNoRate,questionDetail.maximumSize,scaleLabels,answerOptions,missionDetailData.missionTimeStamp,[UserDefaultManager getValue:@"userId"]]];
         }
         //update mission table with welcom message and end message
