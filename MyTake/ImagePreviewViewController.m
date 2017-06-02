@@ -109,9 +109,9 @@
     if ([screenName isEqualToString:@"Image Upload"]) {
         imageUploadObj.getPathOfSelectedImagesArray=[attachmentArray mutableCopy];
         imageUploadObj.imageFileSize=self.fileSize;
-        for (UIViewController *controller in self.navigationController.viewControllers) {
-            if ([controller isKindOfClass:[ImageUploadViewController class]]) {
-                [self.navigationController popToViewController:controller animated:YES];
+        for (int i=(int)(self.navigationController.viewControllers.count); i>0; i--) {
+            if ([[self.navigationController.viewControllers objectAtIndex:i-1] isKindOfClass:[ImageUploadViewController class]]) {
+                [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:i-1] animated:YES];
                 break;
             }
         }
@@ -151,9 +151,9 @@
     if (attachmentArray.count==0) {
         imageUploadObj.getPathOfSelectedImagesArray=[attachmentArray mutableCopy];
         imageUploadObj.imageFileSize=self.fileSize;
-        for (UIViewController *controller in self.navigationController.viewControllers) {
-            if ([controller isKindOfClass:[ImageUploadViewController class]]) {
-                [self.navigationController popToViewController:controller animated:YES];
+        for (int i=(int)(self.navigationController.viewControllers.count); i>0; i--) {
+            if ([[self.navigationController.viewControllers objectAtIndex:i-1] isKindOfClass:[ImageUploadViewController class]]) {
+                [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:i-1] animated:YES];
                 break;
             }
         }

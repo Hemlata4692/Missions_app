@@ -254,11 +254,11 @@
     //take list of selected images and their file size to image upload screen
     imageUploadObj.getPathOfSelectedImagesArray=[selectedImagesPathArray mutableCopy];
     imageUploadObj.imageFileSize=fileSize;
-    for (UIViewController *controller in self.navigationController.viewControllers) {
-        if ([controller isKindOfClass:[ImageUploadViewController class]]) {
-            [self.navigationController popToViewController:controller animated:YES];
-            break;
-        }
+    for (int i=(int)(self.navigationController.viewControllers.count); i>0; i--) {
+        if ([[self.navigationController.viewControllers objectAtIndex:i-1] isKindOfClass:[ImageUploadViewController class]]) {
+                        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:i-1] animated:YES];
+                        break;
+                    }
     }
 }
 #pragma mark - end
