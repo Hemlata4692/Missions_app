@@ -154,12 +154,9 @@ static NSString *googleAPIKey=@"AIzaSyBpHFyF5OC60Zsdj6sSGWMklx0RdL3M2tw";
     checkinObj.checkInLatitude=latLongDict[@"lat"];
     checkinObj.checkInLongitude=latLongDict[@"lng"];
     checkinObj.otherLocation=@"1";
-    for (UIViewController *controller in self.navigationController.viewControllers)
-    {
-        if ([controller isKindOfClass:[ChekInViewController class]])
-        {
-            [self.navigationController popToViewController:controller animated:YES];
-            
+    for (int i=(int)(self.navigationController.viewControllers.count); i>0; i--) {
+        if ([[self.navigationController.viewControllers objectAtIndex:i-1] isKindOfClass:[ChekInViewController class]]) {
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:i-1] animated:YES];
             break;
         }
     }
@@ -310,16 +307,12 @@ static NSString *googleAPIKey=@"AIzaSyBpHFyF5OC60Zsdj6sSGWMklx0RdL3M2tw";
         checkinObj.checkInLongitude=locationDict[@"lng"];
         checkinObj.otherLocation=@"1";
         checkinObj.placeName=placesDict[@"name"];
-        for (UIViewController *controller in self.navigationController.viewControllers)
-        {
-            if ([controller isKindOfClass:[ChekInViewController class]])
-            {
-                [self.navigationController popToViewController:controller animated:YES];
-                
+        for (int i=(int)(self.navigationController.viewControllers.count); i>0; i--) {
+            if ([[self.navigationController.viewControllers objectAtIndex:i-1] isKindOfClass:[ChekInViewController class]]) {
+                [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:i-1] animated:YES];
                 break;
             }
         }
-        
     }
 }
 

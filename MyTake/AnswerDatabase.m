@@ -33,6 +33,10 @@
     } @catch (NSException *exception) {
     }
     //insert answer in answer table
+    answerData.longTextResponse = [answerData.longTextResponse stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+    answerData.ratingWhyResponse = [answerData.ratingWhyResponse stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+    answerData.placeName = [answerData.placeName stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+    
     answerData.isAnswerUploaded=@"No";
     if (0==[self checkRecordExists:answerData.stepId]){
         [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO mission_answer(mission_id,step_id,emoji,longtext_response,rating,rating_why_response,single_answer,multi_answer,place_name,latitude,longitude,text_display,audio_path,video_path,image_folder,isAnswerUploaded,user_id) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%f','%f','%@','%@','%@','%@','%@','%@')",[UserDefaultManager getValue:@"missionId"],answerData.stepId,answerData.emojiResponse,answerData.longTextResponse,answerData.ratingResponse,answerData.ratingWhyResponse,answerData.singleAnswer,multiAnswer,answerData.placeName,[answerData.latitude doubleValue],[answerData.longitude doubleValue],answerData.textDisplay,answerData.audioPath,answerData.videoPath,answerData.imageFolder,answerData.isAnswerUploaded,[UserDefaultManager getValue:@"userId"]]];
